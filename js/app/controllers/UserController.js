@@ -1,4 +1,6 @@
-function UserController() {
+function UserController(user) {
+  debugger
+  this.user = user.data;
 }
 
 angular
