@@ -1,4 +1,5 @@
 function UserController(user) {
+  console.log('hi!');
   console.log(user);
   var ctrl = this;
   ctrl.user = user.data;
