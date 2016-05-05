@@ -1,18 +1,7 @@
-function UserController() {
+function UserController(user) {
+	this.data = user.data;
 }
 
 angular
-	.module('app',['ngRoute'])
+	.module('app')
 	.controller('UserController', UserController)
-	.config(function($routeProvider) {
-		$routeProvider
-		.when('/user/:id', {
-			templateUrl: 'views/user.html',
-			controller: 'UserController',
-			resolve: {
-				user: function($routeParams, UserService) {
-				return UserService.getUser($routeParams.name);
-			  }
-			}
-		})
-	});
