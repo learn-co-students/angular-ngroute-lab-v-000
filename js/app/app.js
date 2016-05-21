@@ -8,6 +8,11 @@ angular
         })
         .when('/user/:id', {
           templateUrl: 'views/user.html',
-          controller: 'UserController'
+          controller: 'UserController as user',
+          resolve: {
+            user: function (MyService, $route) {
+              return MyService.getU($route.current.params.id);
+            }
+          }
         });
     });

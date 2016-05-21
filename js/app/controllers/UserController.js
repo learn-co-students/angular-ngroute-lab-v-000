@@ -1,15 +1,16 @@
-function UserController($scope, $route, $routeParams, $http) {
-  $scope.getUser = function (id) {
-    $http.get('http://0.0.0.0:8882/rest/user/' + id)
-    .then(function (res) {
-      $scope.first = res.data.name.first;
-      $scope.last = res.data.name.last;
-      $scope.email = res.data.email;
-    });
+function UserController($scope, user) {
+    $scope.first = user.data.name.first;
+    $scope.last = user.data.name.last;
+    $scope.email = user.data.email;
+}
+
+function MyService($http) {
+  this.getU = function (id) {
+    return $http.get('http://0.0.0.0:8882/rest/user/' + id);
   };
-  $scope.getUser($routeParams.id);
 }
 
 angular
 	.module('app')
-	.controller('UserController', UserController);
+	.controller('UserController', UserController)
+  .service('MyService', MyService);
