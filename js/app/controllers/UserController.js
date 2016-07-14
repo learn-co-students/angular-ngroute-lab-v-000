@@ -1,6 +1,7 @@
-function UserController() {
-}
-
-angular
+angular 
 	.module('app')
-	.controller('UserController', UserController);
+	.controller('UserController', function (user) {
+		var ctrl = this;
+
+		ctrl.user = user.data;
+	});
