@@ -1,6 +1,6 @@
 function UserService($http) {
   this.getUser = function (name) {
-    return $http.get('/user' + name)
+    return $http.get('/user/' + name)
   }
 }
 
