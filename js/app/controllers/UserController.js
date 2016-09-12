@@ -1,6 +1,5 @@
 function UserController(user) {
-  var ctrl = this;
-  ctrl.user = user.data;
+  this.user = user.data;
 }
 
 angular
