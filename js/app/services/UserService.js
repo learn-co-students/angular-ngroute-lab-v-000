@@ -1,6 +1,7 @@
 function UserService($http) {
   this.getUser = function(id) {
-    var user = $http.get('http://jsonplaceholder.typicode.com/users/' + id);
+    debugger;
+    var user = $http.get('http://0.0.0.0:8882/rest/user/' + id);
     return user;
   };
 }
