@@ -1,14 +1,14 @@
 angular
-    .module('app', ['ngRoute'])
-    .config(function($routeProvider){
-      $routeProvider
-        .when('/user/:name', {
-          templateURL: 'views/user.html',
-          controller: 'UserController as user',
-          resolve: {
-            user: function($http, $route) {
-              $http.get('http://0.0.0.0:8882/rest/user/' + $route.current.params.id);
-            }
+  .module('app', ['ngRoute'])
+  .config(function($routeProvider){
+    $routeProvider
+      .when('/user/:id', {
+        templateURL: 'views/user.html',
+        controller: 'UserController as user',
+        resolve: {
+          user: function($http, $route) {
+            return $http.get('http://0.0.0.0:8882/rest/user/' + $route.current.params.id);
           }
-        });
+       }
     });
+  });
