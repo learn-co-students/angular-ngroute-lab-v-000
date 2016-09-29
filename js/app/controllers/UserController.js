@@ -1,7 +1,7 @@
 function UserController(user) {
-	var ctrl = this;
+	var vm = this;
 
-	ctrl.user = user.data // our user object is populated from the backend
+	vm.user = user.data // our user object is populated from the backend
 }
 
 angular
