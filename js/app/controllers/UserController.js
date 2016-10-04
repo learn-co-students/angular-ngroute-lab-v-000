@@ -1,4 +1,7 @@
-function UserController() {
+function UserController($routeParams) {
+	var ctrl = this;
+
+	ctrl.user = user.data;
 }
 
 angular
