@@ -1,3 +1,11 @@
-<div>
-	User!
-</div>
+<div ng-app class='app'><!-- start ng-app -->
+	<div ng-view><!-- start ng-view -->
+
+	<h2>
+		User {{ctrl.name}}!
+	</h2>
+		<p>
+			{{ctrl.email}}
+		</p>
+	</div><!-- end ng-view -->
+</div><!-- end ng-app -->
