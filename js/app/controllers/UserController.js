@@ -1,4 +1,5 @@
-function UserController() {
+function UserController($routeParams, UserService) {
+	// $routeParams = { name: liam };
 }
 
 angular
