@@ -7,8 +7,9 @@ angular
           controller: 'UserController',
           resolve: {
                     user: function ($routeParams) {
-                        // return $http.get('/user/'+$routeParams.name);
-                      return UserService.getUser($routeParams.id);
+                        return $http.get('/user/'+$routeParams.name);
+                      // UserService isn't needed
+                      // return UserService.getUser($routeParams.id);
                     }
                 }
         });
