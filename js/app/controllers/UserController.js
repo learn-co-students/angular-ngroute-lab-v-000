@@ -1,5 +1,5 @@
 function UserController(userServiceReturnVal) {
-  this.user = userServiceReturnVal.body;
+  this.user = userServiceReturnVal.data;
 }
 
 angular
