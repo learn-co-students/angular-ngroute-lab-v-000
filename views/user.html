@@ -1,3 +1,14 @@
-<div>
-	User!
+<div ng-app="app" class="app">
+    <div ng-view>User!
+      <h2>{{ctrl.user.name.title}}</h2>
+      <h2>{{ctrl.user.name.first}}</h2>
+      <h2>{{ctrl.user.name.last}}</h2>
+      <p>
+        {{ctrl.user.email}}
+      </p>
+    </div>
+
 </div>
+
+In our view, display the user's full name in a `<h2>` element (title, first name and last name).
+  Display the email in a `<p>` tag.
