@@ -1,6 +1,6 @@
 function UserController($routeParams, UserService) {
 	var ctrl = this;
-	console.log($routeParams);
+	console.log(ctrl);
 	UserService
 		.getUser($routeParams.name)
 		.then(function (res) {

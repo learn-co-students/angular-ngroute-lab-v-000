@@ -2,12 +2,13 @@ angular
     .module('app', ['ngRoute'])
     .config(function ($routeProvider) {
         $routeProvider
-            .when('/user/:name', {
+            .when('/user/:param', {
                 templateUrl: 'views/user.html',
-                controller: 'UserController as user',
+                controller: 'UserController as vm',
                 resolve: {
                     user: function ($routeParams, UserService) {
-                        return UserService.getUser($routeParams.name);
+                        console.log($routeParams);
+                        return UserService.getUser($routeParams.param);
                     }
                 }
             });
