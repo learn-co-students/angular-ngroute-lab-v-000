@@ -2,14 +2,13 @@ angular
     .module('app', ['ngRoute'])
     .config(function ($routeProvider) {
         $routeProvider
-            .when('/user/:param', {
+            .when('/user/:id', {
                 templateUrl: 'views/user.html',
-                controller: 'UserController as vm',
+                controller: 'UserController as ctrl',
                 resolve: {
-                    user: function ($routeParams, UserService) {
-                        console.log($routeParams);
-                        return UserService.getUser($routeParams.param);
-                    }
+                    userData: function ($route, UserService) {
+                        return UserService.getUser($route.current.params.id); //$routeParams.name is not liam
+                  }
                 }
             });
     });
