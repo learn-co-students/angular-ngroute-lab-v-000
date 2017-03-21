@@ -1,4 +1,5 @@
-function UserController() {
+function UserController(userResp) {
+  this.userInfo = userResp.data;
 }
 
 angular
